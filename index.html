@@ -1,0 +1,55 @@
+﻿<!doctype html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Time Zone</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+        <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
+        <script src="js/script.js"></script>
+
+       
+    </head>
+
+    <body ng-app="body">
+        <div class="container" style="text-align:center">
+            <h1>Calculo de Time Zone</h1>
+        </div>
+        <hr />
+        <div class="container">
+            <div ng-controller="MyController">
+                <label>Introduzca la hora:</label>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" ng-model="hora" class="form-control" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <label>Introduzca Time Zone:</label>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" class="form-control" ng-model="timeZone" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-6">
+                            <button class="btn btn-primary" type="button" ng-click='calcular()'>Calcular</button>
+                            <button class="btn btn-primary" type="button" ng-click='getHorarios()'>Horarios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+
+    </body>
+</html>
