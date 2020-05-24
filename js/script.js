@@ -1,19 +1,10 @@
 (function (angular) {
     'use strict'; angular.module('body', [])
-        //.service('Horario', function ($http) {
-        //    this.getAll = function (success, failure) {
-        //        $http.get('http://localhost:3000/horario')
-        //        success(success); error(failure);
-        //        console.log(success);
-        //    }
-        //})
+        
 
     .controller('MyController', ['$scope', function ($scope) {
 
-        //Horario.getAll(function (data) {
-        //    $scope.horario = data.horario;
-        //})
-
+       
         $scope.calcular = function () {
             alert($scope.timeZone);
             alert($scope.hora);
@@ -34,7 +25,27 @@
                     alert(status + " : " + error);
                 }
             }); 
-            }
+        };
+
+        $scope.postHorarios = function () {
+            $scope.datos = $scope.hora+","+$scope.timeZone;
+
+            alert($scope.datos);
+
+            /* $.ajax({
+                type: "POST",
+                url: "",
+                dataType: "json",
+                cache: false,
+                async: false,
+                success: function (response) {
+                    alert(JSON.stringify(response));
+                },
+                error: function (request, status, error) {
+                    alert(status + " : " + error);
+                }
+            }); */ 
+        }
     }]);
 })(window.angular);
   

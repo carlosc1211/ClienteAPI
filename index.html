@@ -7,6 +7,31 @@
         <script src="//code.angularjs.org/snapshot/angular.min.js"></script>
         <script src="js/script.js"></script>
 
+
+        <!-- FUNCION PARA EL CALCULO DE LA HORA -->
+        <script type="text/javascript">
+            function dateFormat(fecha)
+            {
+                return fecha.getDate()+"/"+fecha.getMonth()+"/"+fecha.getFullYear()+" "+fecha.getHours()+":"+fecha.getMinutes()+":"+fecha.getSeconds();
+            }
+         
+            var dateNow=new Date();
+            var dateUTC=new Date(dateNow.getUTCFullYear(), dateNow.getUTCMonth(), dateNow.getUTCDate(), dateNow.getUTCHours(), dateNow.getUTCMinutes(), dateNow.getUTCSeconds())
+         
+            
+            var timeZone=-3;
+            // Calculamos los segundos de la zona horaria
+            var seconds=(timeZone*60*60)*1000;
+         
+            document.write("Fecha actual => "+dateFormat(dateNow));
+            document.write("Fecha UTC => "+dateFormat(dateUTC));
+         
+            // fecha UTC
+            dateUTC.setTime(dateUTC.getTime()+seconds);
+         
+            /* document.write("TimeZone => "+timeZone);
+            document.write("Fecha UTC+TimeZone => "+dateFormat(dateUTC)); */
+        </script>
        
     </head>
 
@@ -42,7 +67,7 @@
                     <div class="row">
                         <div class="col-6">
                             <button class="btn btn-primary" type="button" ng-click='calcular()'>Calcular</button>
-                            <button class="btn btn-primary" type="button" ng-click='getHorarios()'>Horarios</button>
+                            <button class="btn btn-primary" type="button" ng-click='postHorarios()'>Horarios</button>
                         </div>
                     </div>
                 </div>
